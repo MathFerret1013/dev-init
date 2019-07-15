@@ -1,0 +1,7 @@
+
+- name: Ansible Playbook for Setting up Development Environments
+
+  hosts: all
+  connection: local
+  roles:
+    - platform

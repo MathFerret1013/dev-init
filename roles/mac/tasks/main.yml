@@ -1,0 +1,14 @@
+---
+
+# system
+- include_tasks: brew.yml
+  tags: [brew]
+
+- include_tasks: zsh.yml
+  tags: [zsh]
+
+- include_tasks: dev.yml
+  tags: [dev]
+
+- include_tasks: usr.yml
+  tags: [usr]

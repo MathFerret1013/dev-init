@@ -1,0 +1,19 @@
+- name: install zsh
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items:
+   -  # needed to download oh-my-zsh
+   - zsh
+  tags: [zsh]
+
+- name: check for oh-my-zsh
+  stat:
+    path: "{{ ansible_env.HOME }}/.oh-my-zsh"
+  register: file_details
+  tags: [zsh]
+
+- name: install oh-my-zsh if not found
+  shell: sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  when: file_details.stat.exists == false
+  tags: [zsh]

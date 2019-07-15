@@ -1,0 +1,20 @@
+
+- name: install dev packages
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items:
+   - clang-format
+   - cmake
+   - cppcheck
+   - llvm
+   - ninja
+   - pyenv
+   - pyenv-virtualenv
+   - python3
+   - tmux
+   - tree
+   - wget
+  tags: [dev]
+
+
