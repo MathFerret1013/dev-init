@@ -1,0 +1,26 @@
+- name: add pyenv setup to ${HOME}/.zshrc
+  lineinfile:
+    path: '{{ ansible_env.HOME }}/.zshrc'
+    state: present
+    line: 'eval "$(pyenv init -)"'
+  tags: [pyenv]
+
+- name: add pyenv virtualenv setup to ${HOME}/.zshrc
+  lineinfile:
+    path: '{{ ansible_env.HOME }}/.zshrc'
+    state: present
+    line: 'eval "$(pyenv virtualenv-init -)"'
+  tags: [pyenv]
+
+# TODO: Move python version to group vars
+- name: check for pyenv python version
+  shell:  pyenv versions | grep {{ python_version }}
+  register: have_python
+  ignore_errors: True
+  failed_when: have_python.rc == 2
+  tags: [pyenv]
+
+- name: install pyenv python {{ python_version }}
+  shell: pyenv install {{ python_version }}
+  when: have_python.rc != 0
+  tags: [pyenv]

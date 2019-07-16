@@ -48,7 +48,7 @@
     ],
     "clangTidy.executable": "/usr/local/opt/llvm/bin/clang-tidy",
     "clangd.path": "/usr/local/opt/llvm/bin/clangd",
-    "editor.fontFamily": "Roboto Mono",
+    "editor.fontFamily": "Roboto Mono, Menlo, monospace",
     "editor.fontSize": 12.5,
     "editor.renderWhitespace": "all",
     "editor.suggestSelection": "first",
@@ -70,7 +70,7 @@
     },
     "materialTheme.accent": "Tomato",
     "python.jediEnabled": true,
-    "terminal.integrated.fontFamily": "Roboto Mono",
+    "terminal.integrated.fontFamily": "Roboto Mono, Menlo, monospace",
     "terminal.integrated.rendererType": "dom",
     "workbench.colorCustomizations": {
         "activityBarBadge.background": "#F44336",

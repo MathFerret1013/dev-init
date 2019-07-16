@@ -4,7 +4,3 @@ Ansible playbook to setup my local mac dev environment. To run the playbook exec
 ```bash
 ansible-playbook playbook.yml
 ```
-
-### TODO:
- * post install config: byuobu
- * install fonts

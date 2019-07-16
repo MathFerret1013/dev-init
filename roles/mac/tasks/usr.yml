@@ -1,7 +1,18 @@
-- name: install user packages
+- name: install usr packages
   homebrew:
-    name: "{{ item }}"
+    name: '{{ item }}'
     state: present
   with_items:
    - youtube-dl
+  tags: [usr]
+
+- name: install usr casks
+  homebrew_cask:
+    name: '{{ item }}'
+    state: present
+  with_items:
+   - fork
+   - gimp
+   - iterm2
+   - macpass
   tags: [usr]

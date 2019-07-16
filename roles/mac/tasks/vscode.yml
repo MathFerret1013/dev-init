@@ -39,6 +39,6 @@
 
 - name: copy vscode user settings
   copy:
-    src: 'config/vscode.json'
+    src: 'dotfiles/vscode.json'
     dest: '{{ ansible_env.HOME }}/Library/Application Support/Code/User/settings.json'
   tags: [vscode]

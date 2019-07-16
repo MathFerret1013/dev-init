@@ -3,7 +3,7 @@
     name: '{{ item }}'
     state: present
   with_items:
-   - wget # needed to download oh-my-zsh
+   - wget
    - zsh
   tags: [zsh]
 
@@ -29,8 +29,39 @@
     dest: '{{ ansible_env.HOME }}/.dotfiles/zshrc'
   tags: [zsh]
 
-- name: add "source ~/.dotfiles/zshrc" to ~/.zshrc
+- name: add "source ${HOME}/.dotfiles/zshrc" to ${HOME}/.zshrc
   lineinfile:
     path: '{{ ansible_env.HOME }}/.zshrc'
     state: present
     line: 'source ${HOME}/.dotfiles/zshrc'
+  tags: [zsh]
+
+- name: install alacritty
+  homebrew_cask:
+    name: "alacritty"
+    state: present
+  tags: [zsh]
+
+- name: mkdir ${HOME}/.config/alacritty
+  file:
+    path: '{{ ansible_env.HOME }}/.config/alacritty'
+    state: directory
+
+- name: copy alacritty config
+  copy:
+    src: 'dotfiles/alacritty.yml'
+    dest: '{{ ansible_env.HOME }}//alacritty.yml'
+  tags: [zsh]
+
+- name: copy tmux config
+  copy:
+    src: 'dotfiles/tmux.conf'
+    dest: '{{ ansible_env.HOME }}/.dotfiles/tmux.conf'
+  tags: [zsh]
+
+- name: symlink tmux config
+  file:
+    src: '{{ ansible_env.HOME }}/.dotfiles/tmux.conf'
+    dest: '{{ ansible_env.HOME }}/.tmux.conf'
+    state: link
+  tags: [zsh]

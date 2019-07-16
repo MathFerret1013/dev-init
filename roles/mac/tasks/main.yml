@@ -2,6 +2,9 @@
 - include_tasks: mac.yml
   tags: [mac]
 
+- include_tasks: fonts.yml
+  tags: [fonts]
+
 - include_tasks: brew.yml
   tags: [brew]
 
@@ -10,6 +13,9 @@
 
 - include_tasks: dev.yml
   tags: [dev]
+
+- include_tasks: pyenv.yml
+  tags: [pyenv]
 
 - include_tasks: vscode.yml
   tags: [vscode]

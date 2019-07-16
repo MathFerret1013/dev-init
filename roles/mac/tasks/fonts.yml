@@ -1,0 +1,25 @@
+- name: download fonts
+  get_url:
+    url: https://fonts.google.com/download?family=Roboto%20Mono
+    dest: /tmp/roboto.zip
+  tags: [fonts]
+
+- name: mkdir /tmp/fonts
+  file:
+    path: /tmp/fonts
+    state: directory
+  tags: [fonts]
+
+- name: extract fonts
+  unarchive:
+    src: /tmp/roboto.zip
+    dest: /tmp/fonts
+  tags: [fonts]
+
+- name: install fonts
+  copy:
+    src: "{{ item }}"
+    dest: '{{ ansible_env.HOME }}/Library/Fonts'
+  with_fileglob:
+    - /tmp/fonts/*.ttf
+  tags: [fonts]
