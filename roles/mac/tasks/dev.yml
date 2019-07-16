@@ -1,5 +1,4 @@
-
-- name: install dev packages
+- name: install dev homebrew packages
   homebrew:
     name: "{{ item }}"
     state: present
@@ -12,11 +11,11 @@
    - pyenv
    - pyenv-virtualenv
    - python3
-   - byobu
    - shellcheck
+   - the_silver_searcher
+   - tmux
    - tree
    - wget
-   - the_silver_searcher
   tags: [dev]
 
 - name: add pyenv setup to ${HOME}/.zshrc
@@ -33,6 +32,11 @@
     line: 'eval "$(pyenv virtualenv-init -)"'
   tags: [dev]
 
+# TODO: Move python version to group vars
+- name: install pyenv python 3.7.3
+  shell: pyenv install 3.7.3
+  tags: [dev]
+
 - name: install dev casks
   homebrew_cask:
     name: "{{ item }}"
@@ -40,4 +44,10 @@
   with_items:
    - alacritty
    - fork
+  tags: [dev]
+
+- name: setup alacritty config
+  copy:
+    src: 'config/alacritty.yml'
+    dest: '{{ ansible_env.HOME }}/.config/alacritty/alacritty.yml'
   tags: [dev]

@@ -1,0 +1,100 @@
+{
+    "C_Cpp.updateChannel": "Insiders",
+    "cSpell.diagnosticLevel": "Warning",
+    "cSpell.enabledLanguageIds": [
+        "asciidoc",
+        "c",
+        "cmake",
+        "cpp",
+        "csharp",
+        "css",
+        "git-commit",
+        "go",
+        "handlebars",
+        "html",
+        "jade",
+        "java",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "jsonc",
+        "latex",
+        "less",
+        "markdown",
+        "php",
+        "plaintext",
+        "pug",
+        "python",
+        "restructuredtext",
+        "rust",
+        "scala",
+        "scss",
+        "text",
+        "typescript",
+        "typescriptreact",
+        "yaml",
+        "yml"
+    ],
+    "cSpell.userWords": [
+        "Popen",
+        "cmake",
+        "emsdk",
+        "mkdir",
+        "openpty",
+        "openvslam",
+        "pexpect",
+        "sysctl",
+        "wasm"
+    ],
+    "clangTidy.executable": "/usr/local/opt/llvm/bin/clang-tidy",
+    "clangd.path": "/usr/local/opt/llvm/bin/clangd",
+    "editor.fontFamily": "Roboto Mono",
+    "editor.fontSize": 12.5,
+    "editor.renderWhitespace": "all",
+    "editor.suggestSelection": "first",
+    "editor.tokenColorCustomizations": {
+        "comments": "#229977",
+        "textMateRules": [
+            {
+                "scope": "string.quoted.docstring.multi.python",
+                "settings": {
+                    "foreground": "#ad3400"
+                }
+            }
+        ]
+    },
+    "eslint.enable": false,
+    "files.autoSave": "off",
+    "gitlens.advanced.messages": {
+        "suppressFileNotUnderSourceControlWarning": true
+    },
+    "materialTheme.accent": "Tomato",
+    "python.jediEnabled": true,
+    "terminal.integrated.fontFamily": "Roboto Mono",
+    "terminal.integrated.rendererType": "dom",
+    "workbench.colorCustomizations": {
+        "activityBarBadge.background": "#F44336",
+        "breadcrumb.activeSelectionForeground": "#F44336",
+        "editor.findMatchBorder": "#F44336",
+        "editorSuggestWidget.highlightForeground": "#F44336",
+        "editorWarning.foreground": "#FF0000",
+        "editorWidget.border": "#F44336",
+        "editorWidget.resizeBorder": "#F44336",
+        "list.activeSelectionForeground": "#F44336",
+        "list.highlightForeground": "#F44336",
+        "list.inactiveSelectionForeground": "#F44336",
+        "menu.selectionForeground": "#F44336",
+        "menubar.selectionForeground": "#F44336",
+        "notificationLink.foreground": "#F44336",
+        "panelTitle.activeBorder": "#F44336",
+        "pickerGroup.foreground": "#F44336",
+        "progressBar.background": "#F44336",
+        "scrollbarSlider.activeBackground": "#F4433650",
+        "selection.background": "#F4433640",
+        "settings.headerForeground": "#F44336",
+        "settings.modifiedItemIndicator": "#F44336",
+        "tab.activeBorder": "#F44336",
+        "textLink.foreground": "#F44336"
+    },
+    "workbench.colorTheme": "Material Theme Darker High Contrast"
+}

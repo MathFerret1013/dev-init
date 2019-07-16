@@ -1,8 +1,44 @@
 
+- name: check for visual-studio-code
+  shell: brew cask list | grep 'visual-studio-code'
+  register: have_vscode
+  ignore_errors: True
+  failed_when: have_vscode.rc == 2
+  tags: [vscode]
+
 - name: install visual-studio-code
   homebrew_cask:
     name: visual-studio-code
     state: present
+  when: have_vscode != 0
+  tags: [vscode]
 
-# TODO: install extensions
-# TODO: setup config
+- name: install vs code extensions
+  shell: code --install-extension {{ item }}
+  with_items:
+   - aaron-bond.better-comments
+   - bibhasdn.unique-lines
+   - cschlosser.doxdocgen
+   - DavidAnson.vscode-markdownlint
+   - eamodio.gitlens
+   - Equinusocio.vsc-material-theme
+   - Gruntfuggly.todo-tree
+   - llvm-vs-code-extensions.vscode-clangd
+   - ms-python.python
+   - njpwerner.autodocstring
+   - PKief.material-icon-theme
+   - sandy081.todotasks
+   - streetsidesoftware.code-spell-checker
+   - TabNine.tabnine-vscode
+   - timonwong.shellcheck
+   - tomoki1207.pdf
+   - twxs.cmake
+   - vadimcn.vscode-lldb
+   - vector-of-bool.cmake-tools
+  tags: [vscode]
+
+- name: copy vscode user settings
+  copy:
+    src: 'config/vscode.json'
+    dest: '{{ ansible_env.HOME }}/Library/Application Support/Code/User/settings.json'
+  tags: [vscode]
