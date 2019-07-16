@@ -7,5 +7,7 @@ ansible-playbook playbook.yml
 
 ### TODO:
  * post install config: byuobu, pyenv
- * support casks: vscode, fork
+ * alacritty config
+ * install vs code extensions
+ * install fonts
  * zsh dotfiles

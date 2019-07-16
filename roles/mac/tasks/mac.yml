@@ -1,0 +1,4 @@
+- name: turn off font smoothing
+  shell: defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
+  tags: [mac]
+

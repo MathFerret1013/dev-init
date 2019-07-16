@@ -1,0 +1,17 @@
+#! /bin/zsh
+# Personal zshrc to be sourced by ${HOME}/.zshrc
+
+# byobu
+export BYOBU_PREFIX=/usr/local
+export BYOBU_PYTHON="${HOME}/.pyenv/shims/python"
+
+# homebrew
+export PATH="$(brew --prefix llvm)/bin:/usr/local/bin:${PATH}"
+
+# git
+alias gs="git status"
+alias gl="git log --graph --decorate --pretty=oneline --abbrev-commit"
+
+# shell navigation
+alias ..="cd .."
+alias ...="cd ../.."

@@ -1,6 +1,7 @@
 ---
+- include_tasks: mac.yml
+  tags: [mac]
 
-# system
 - include_tasks: brew.yml
   tags: [brew]
 
