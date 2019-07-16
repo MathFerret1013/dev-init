@@ -46,10 +46,14 @@
         "sysctl",
         "wasm"
     ],
+
+    // use homebrew llvm
     "clangTidy.executable": "/usr/local/opt/llvm/bin/clang-tidy",
     "clangd.path": "/usr/local/opt/llvm/bin/clangd",
+
     "editor.fontFamily": "Roboto Mono, Menlo, monospace",
     "editor.fontSize": 12.5,
+    "editor.minimap.renderCharacters": false,
     "editor.renderWhitespace": "all",
     "editor.suggestSelection": "first",
     "editor.tokenColorCustomizations": {
@@ -63,8 +67,7 @@
             }
         ]
     },
-    "eslint.enable": false,
-    "files.autoSave": "off",
+    "files.autoSave": "on",
     "gitlens.advanced.messages": {
         "suppressFileNotUnderSourceControlWarning": true
     },

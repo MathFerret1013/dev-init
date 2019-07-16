@@ -8,6 +8,7 @@
    - cppcheck
    - llvm
    - ninja
+   - git
    - pyenv
    - pyenv-virtualenv
    - shellcheck
